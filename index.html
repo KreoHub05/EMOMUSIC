@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Emotion Based Music Recommendation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">EMO‑MUSIC</div>
+    </nav>
+
+    <main class="container">
+
+        <section class="card upload-box glass">
+            <h2>Use Your Camera</h2>
+
+            <!-- Video Preview -->
+            <video id="webcam" autoplay playsinline></video>
+
+            <div class="cam-controls">
+                <button id="startCamBtn" class="btn">Start Camera</button>
+                <button id="stopCamBtn" class="btn ghost">Stop Camera</button>
+                <button id="captureBtn" class="btn primary">Capture Photo</button>
+            </div>
+
+            <!-- Captured Image Preview -->
+            <div class="image-preview" id="preview">
+                <p>No image captured</p>
+            </div>
+
+            <button id="detectBtn" class="btn detect">Detect Emotion</button>
+
+            <!-- Scan animation (hidden by default) -->
+            <div class="scan-animation" id="scanAnimation" aria-live="polite" role="status">
+                <div class="pulse-circle"></div>
+                <p>Scanning Emotion...</p>
+            </div>
+
+            <!-- Hidden Canvas -->
+            <canvas id="canvas" style="display:none;"></canvas>
+        </section>
+
+        <section class="card result-box glass" id="resultBox">
+            <h2>Detected Emotion:</h2>
+            <h1 id="emotionText">--</h1>
+
+            <h3>Recommended Songs</h3>
+            <div class="songs" id="songsList"></div>
+        </section>
+
+    </main>
+
+<script src="script.js"></script>
+</body>
+</html>
